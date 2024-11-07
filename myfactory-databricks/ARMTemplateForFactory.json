@@ -122,8 +122,9 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2024-11-07T16:08:00",
-						"timeZone": "E. South America Standard Time"
+						"startTime": "2024-11-07T16:17:00",
+						"timeZone": "E. South America Standard Time",
+						"schedule": {}
 					}
 				}
 			},
