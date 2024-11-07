@@ -1,0 +1,26 @@
+{
+	"name": "acionar_anac",
+	"properties": {
+		"description": "Trigger",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline-anac",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-11-07T20:57:00",
+				"endTime": "2024-11-08T20:48:00",
+				"timeZone": "E. South America Standard Time"
+			}
+		}
+	}
+}
