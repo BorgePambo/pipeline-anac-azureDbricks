@@ -3,13 +3,20 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [],
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline-anac",
+					"type": "PipelineReference"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2024-11-07T16:17:00",
+				"startTime": "2024-11-07T18:00:00",
 				"endTime": "2024-07-11T21:15:13",
 				"timeZone": "E. South America Standard Time"
 			}
