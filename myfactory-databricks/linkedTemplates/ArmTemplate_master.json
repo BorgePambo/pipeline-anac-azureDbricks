@@ -1,0 +1,56 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Nome do Data Factory",
+			"defaultValue": "myfactory-databricks"
+		},
+		"AzureDatabricks_conexao_accessToken": {
+			"type": "secureString",
+			"metadata": "Cadeia segura para \"accessToken\" de \"AzureDatabricks_conexao\""
+		},
+		"AzureDatabricks_conexao_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1104-185559-77m7t6z9"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI para conta de armazenamento contendo os modelos ARM ligados"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Token sas para conta de armazenamento contendo os modelos ARM ligados"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "myfactory-databricks_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricks_conexao_accessToken": {
+						"value": "[parameters('AzureDatabricks_conexao_accessToken')]"
+					},
+					"AzureDatabricks_conexao_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks_conexao_properties_typeProperties_existingClusterId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

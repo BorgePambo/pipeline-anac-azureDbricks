@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "myfactory-databricks"
+		},
+		"AzureDatabricks_conexao_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricks_conexao_properties_typeProperties_existingClusterId": {
+			"value": "1104-185559-77m7t6z9"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
