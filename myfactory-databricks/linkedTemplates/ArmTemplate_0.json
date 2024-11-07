@@ -122,7 +122,40 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2024-11-07T16:17:00",
+						"startTime": "2024-11-07T18:02:00",
+						"timeZone": "E. South America Standard Time",
+						"schedule": {}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline-anac')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/acionar_anac')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"description": "Trigger",
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline-anac",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2024-11-07T20:57:00",
+						"endTime": "2024-11-08T20:48:00",
 						"timeZone": "E. South America Standard Time",
 						"schedule": {}
 					}
